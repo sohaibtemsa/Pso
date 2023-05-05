@@ -109,7 +109,33 @@ public class PSOEngine {
         }
         return best;
     }
+// public double evaluateFitness(double[] positions) {
+//     double fitness = 0.0;
+//     double[] usedCapacity = new double[numFacilities]; // tableau pour stocker la capacité utilisée par chaque installation
 
+//     // calcul de la distance entre chaque client et chaque installation
+//     for (int i = 0; i < numClients; i++) {
+//         double shortestDist = Double.POSITIVE_INFINITY;
+//         for (int j = 0; j < numFacilities; j++) {
+//             double dist = distanceMatrix[i][j] * positions[j];
+//             if (dist < shortestDist) {
+//                 shortestDist = dist;
+//                 assignments[i] = j; // on attribue le client à l'installation la plus proche
+//             }
+//         }
+//         fitness += shortestDist; // on ajoute la distance au fitness total
+//         usedCapacity[assignments[i]] += demands[i]; // on ajoute la demande du client à la capacité utilisée de l'installation
+//     }
+
+//     // vérification des contraintes de capacité
+//     for (int j = 0; j < numFacilities; j++) {
+//         if (usedCapacity[j] > capacities[j]) {
+//             fitness += (usedCapacity[j] - capacities[j]) * penaltyFactor; // on ajoute une pénalité proportionnelle à la surcapacité
+//         }
+//     }
+
+//     return fitness;
+// }
     public double evaluateFitness(double[] positions) {
         double fitness1 = 0;
         double fitness2 = 0;
