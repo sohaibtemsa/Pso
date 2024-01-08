@@ -36,7 +36,7 @@ public class PSOEngine {
 //                positions[j] = 0;
 //                if (j % nbr_choice_entrepots == 1)
 //                    positions[j] = 1;
-//                velocities[j] = 0;
+                velocities[j] = 0;
             }
             //Create the particle
             particles[i] = new Particle(positions, velocities);
@@ -71,14 +71,14 @@ public class PSOEngine {
         for (int i=0; i<numDimensions; i++) {
             particle.position[i] = (particle.position[i] + particle.velocity[i]);
 
-//            if (particle.position[i] >= 0.8 && particle.position[i] <= 1.2)
-//                particle.position[i] = 1;
-//            else if (particle.position[i] <= 0.2 && particle.position[i] >= -0.2)
-//                particle.position[i] = 0;
-//            if (particle.position[i] >= 0.5)
-//                particle.position[i] = 1;
-//            else
-//                particle.position[i] = 0;
+            if (particle.position[i] >= 0.8 && particle.position[i] <= 1.2)
+                particle.position[i] = 1;
+            else if (particle.position[i] <= 0.2 && particle.position[i] >= -0.2)
+                particle.position[i] = 0;
+            if (particle.position[i] >= 0.5)
+                particle.position[i] = 1;
+            else
+                particle.position[i] = 0;
         }
     }
 
@@ -140,24 +140,19 @@ public class PSOEngine {
         double fitness1 = 0;
         double fitness2 = 0;
         double fitness = 0;
-//        int a = (positions.length - nbr_choice_entrepots + 1);
+        int a = (positions.length - nbr_choice_entrepots + 1);
 
-//        for (int i = a; i <= positions.length; i++) {
-//            fitness = fitness + f_j[i - a] * positions[i - 1];
-//        }
-//
-//        int j = 0;
-//        for (int i = 1; i <= (positions.length - nbr_choice_entrepots); i++) {
-//            if (((i - 1) % nbr_choice_entrepots == 0)  && i != 1)
-//                j++;
-//            fitness2 =  fitness2 + c_i_j[j][(i - 1) % nbr_choice_entrepots] * positions[i - 1];
-//        }
-//        fitness = fitness1 + fitness2;
-        for (int i=0; i<numDimensions; i++) {
-            fitness = fitness + (Math.pow(positions[i],2)-(10*Math.cos(2*Math.PI*positions[i])));
+        for (int i = a; i <= positions.length; i++) {
+            fitness = fitness + f_j[i - a] * positions[i - 2];
         }
 
-        fitness = fitness + (10*numDimensions);
+        int j = 0;
+        for (int i = 1; i <= (positions.length - nbr_choice_entrepots); i++) {
+            if (((i - 1) % nbr_choice_entrepots == 0)  && i != 1)
+                j++;
+            fitness2 =  fitness2 + c_i_j[j][(i - 1) % nbr_choice_entrepots] * positions[i - 1];
+        }
+        fitness = fitness1 + fitness2;
         return fitness;
 
         }

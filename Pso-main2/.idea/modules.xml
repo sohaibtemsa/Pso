@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hybridation/Hybridation.iml" filepath="$PROJECT_DIR$/Hybridation/Hybridation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pso/Pso.iml" filepath="$PROJECT_DIR$/Pso/Pso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Pso-main2.iml" filepath="$PROJECT_DIR$/.idea/Pso-main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pso_thread/Pso_thread.iml" filepath="$PROJECT_DIR$/Pso_thread/Pso_thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pso_thread_v1/Pso_thread_v1.iml" filepath="$PROJECT_DIR$/Pso_thread_v1/Pso_thread_v1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TSP_Pso/TSP_Pso.iml" filepath="$PROJECT_DIR$/TSP_Pso/TSP_Pso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestPso/TestPso.iml" filepath="$PROJECT_DIR$/TestPso/TestPso.iml" />
+    </modules>
+  </component>
+</project>
